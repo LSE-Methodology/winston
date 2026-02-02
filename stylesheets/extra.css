@@ -1,3 +1,14 @@
+/* LSE brand red (Pantone 485 C -> #DA291C) for the header/banner. */
+:root {
+  --lse-red: #da291c;
+}
+
+.md-header,
+.md-tabs,
+.md-banner {
+  background-color: var(--lse-red);
+}
+
 /* Keep the ASCII logo block on a white background for legibility. */
 .md-typeset pre.ascii-logo,
 .md-typeset .ascii-logo pre {
@@ -8,5 +19,124 @@
 
 .md-typeset pre.ascii-logo code,
 .md-typeset .ascii-logo pre code {
+  background-color: #ffffff;
   color: #000000;
+}
+
+/* MkDocs Material wraps fenced blocks in .highlight; the class sits on a <p>. */
+.md-typeset .ascii-logo .highlight,
+.md-typeset .ascii-logo .highlight pre,
+.md-typeset .ascii-logo .highlight code {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Override Material's code vars locally for the ASCII logo block. */
+.md-typeset pre.ascii-logo {
+  --md-code-bg-color: #ffffff;
+  --md-code-fg-color: #000000;
+  background-color: #ffffff !important;
+}
+
+.md-typeset pre.ascii-logo > code {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Terminal-style hero block with typing animation. */
+.md-typeset .terminal {
+  background: radial-gradient(circle at 20% 20%, #152018 0%, #0b0f0c 45%, #0b0f0c 100%);
+  border: 1px solid #1c2a1f;
+  border-radius: 0.6rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  color: #d9f5d9;
+  font-family: var(--md-code-font-family);
+  margin: 1rem 0 1.5rem;
+  overflow: hidden;
+}
+
+.md-typeset .terminal-bar {
+  align-items: center;
+  background: linear-gradient(90deg, #0f1a12 0%, #0c140f 100%);
+  border-bottom: 1px solid #142117;
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.md-typeset .terminal-title {
+  color: #9cc9a3;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  margin-left: 0.4rem;
+}
+
+.md-typeset .terminal .dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 0.6rem;
+  width: 0.6rem;
+}
+
+.md-typeset .terminal .dot-red {
+  background: #ff5f57;
+}
+
+.md-typeset .terminal .dot-amber {
+  background: #febc2e;
+}
+
+.md-typeset .terminal .dot-green {
+  background: #28c840;
+}
+
+.md-typeset .terminal-body {
+  line-height: 1;
+  padding: 1rem 1.25rem 1.1rem;
+}
+
+.md-typeset .terminal .term-line {
+  display: block;
+  line-height: 1;
+  margin: 0;
+  overflow: hidden;
+  white-space: pre;
+  width: 0;
+  animation: terminal-typing 1.2s steps(var(--chars)) forwards;
+  animation-delay: var(--delay);
+}
+
+.md-typeset .terminal .term-line:last-child::after {
+  content: "▋";
+  margin-left: 0.15rem;
+  animation: terminal-caret 0.85s steps(1) infinite;
+}
+
+@keyframes terminal-typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes terminal-caret {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .terminal .term-line {
+    animation: none;
+    width: 100%;
+  }
+  .md-typeset .terminal .term-line:last-child::after {
+    animation: none;
+  }
 }
