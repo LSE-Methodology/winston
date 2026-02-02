@@ -1,0 +1,12 @@
+/* Keep the ASCII logo block on a white background for legibility. */
+.md-typeset pre.ascii-logo,
+.md-typeset .ascii-logo pre {
+  background-color: #ffffff;
+  border: 1px solid #e3e3e3;
+  box-shadow: none;
+}
+
+.md-typeset pre.ascii-logo code,
+.md-typeset .ascii-logo pre code {
+  color: #000000;
+}
