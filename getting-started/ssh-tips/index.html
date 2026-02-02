@@ -538,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/interactive-jobs.md" class="md-nav__link">
+      <a href="../../slurm/interactive-jobs/" class="md-nav__link">
         
   
   
@@ -968,12 +968,19 @@
 </code></pre></div>
 <p>Then add:</p>
 <div class="highlight"><pre><span></span><code>Host<span class="w"> </span>winston
-<span class="w">    </span>HostName<span class="w"> </span>&lt;ip_address&gt;
+<span class="w">    </span>HostName<span class="w"> </span>&lt;host-provided-by-admin&gt;
 <span class="w">    </span>User<span class="w"> </span>&lt;username&gt;
+<span class="w">    </span>IdentityFile<span class="w"> </span>~/.ssh/id_ed25519
+<span class="w">    </span>ServerAliveInterval<span class="w"> </span><span class="m">60</span>
+<span class="w">    </span>ServerAliveCountMax<span class="w"> </span><span class="m">2</span>
 </code></pre></div>
 <p>Then connect with:</p>
 <div class="highlight"><pre><span></span><code>ssh<span class="w"> </span>winston
 </code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Remove <code>IdentityFile</code> if you are using password-based login.</p>
+</div>
 
 
 

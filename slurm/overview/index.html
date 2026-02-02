@@ -494,6 +494,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#partitions-and-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partitions and priority
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -538,7 +549,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive-jobs.md" class="md-nav__link">
+      <a href="../interactive-jobs/" class="md-nav__link">
         
   
   
@@ -944,6 +955,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#partitions-and-priority" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Partitions and priority
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -974,10 +996,17 @@
 Login nodes are limited to <strong>2 CPU cores and 4GB RAM</strong>.</p>
 </div>
 <h2 id="quick-commands">Quick commands<a class="headerlink" href="#quick-commands" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>squeue<span class="w">           </span><span class="c1"># view jobs</span>
-scancel<span class="w"> </span>&lt;JOBID&gt;<span class="w">  </span><span class="c1"># cancel a job</span>
-winfo<span class="w">            </span><span class="c1"># view allocated resources / cluster usage (local helper)</span>
+<div class="highlight"><pre><span></span><code>squeue<span class="w">               </span><span class="c1"># view all jobs</span>
+squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w">      </span><span class="c1"># view your jobs</span>
+scancel<span class="w"> </span>&lt;JOBID&gt;<span class="w">      </span><span class="c1"># cancel a job</span>
+sinfo<span class="w">               </span><span class="c1"># view partitions / nodes</span>
+winfo<span class="w">               </span><span class="c1"># view allocated resources / cluster usage (local helper)</span>
 </code></pre></div>
+<h2 id="partitions-and-priority">Partitions and priority<a class="headerlink" href="#partitions-and-priority" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Partitions: <code>winston</code> (CPU) and <code>winston_gpu</code> (GPU).</li>
+<li>QoS priority order: faculty → postdocs → PhD students.</li>
+</ul>
 
 
 

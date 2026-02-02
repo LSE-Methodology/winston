@@ -11,6 +11,10 @@
       
       
       
+        <link rel="prev" href="../batch-jobs/">
+      
+      
+        <link rel="next" href="../gpu-jobs/">
       
       
         
@@ -363,8 +367,10 @@
       
   
   
+    
   
   
+  
     
     
     
@@ -375,11 +381,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -400,7 +406,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             
@@ -471,10 +477,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../interactive-jobs.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interactive jobs
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -490,6 +523,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#request-an-interactive-allocation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Request an interactive allocation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-shot-interactive-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-shot interactive shell
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -880,6 +955,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#one-shot-interactive-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One-shot interactive shell
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -907,6 +993,10 @@
 <p class="admonition-title">Tip</p>
 <p>If you need interactive work frequently, consider using tmux so sessions survive disconnects.</p>
 </div>
+<h2 id="one-shot-interactive-shell">One-shot interactive shell<a class="headerlink" href="#one-shot-interactive-shell" title="Permanent link">&para;</a></h2>
+<p>You can also request a shell in one command:</p>
+<div class="highlight"><pre><span></span><code>srun<span class="w"> </span>--pty<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--time<span class="o">=</span><span class="m">01</span>:00:00<span class="w"> </span>bash
+</code></pre></div>
 
 
 

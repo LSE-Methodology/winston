@@ -560,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/interactive-jobs.md" class="md-nav__link">
+      <a href="../../slurm/interactive-jobs/" class="md-nav__link">
         
   
   
@@ -1008,29 +1008,34 @@
 <h1 id="transferring-files">Transferring files<a class="headerlink" href="#transferring-files" title="Permanent link">&para;</a></h1>
 <p>You can move data to/from Winston using either GUI tools or command-line tools.</p>
 <h2 id="gui-option">GUI option<a class="headerlink" href="#gui-option" title="Permanent link">&para;</a></h2>
-<p>A tool like CyberDuck can transfer files to your user space on Winston using:</p>
+<p>A tool like Cyberduck (SFTP) can transfer files to your user space on Winston using:</p>
 <ul>
 <li>your username</li>
 <li>your authentication method (password or key)</li>
-<li>the Winston host/IP</li>
+<li>the Winston host (provided privately)</li>
 </ul>
 <h2 id="command-line-scp">Command line: <code>scp</code><a class="headerlink" href="#command-line-scp" title="Permanent link">&para;</a></h2>
 <p>Copy local → Winston:</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>&lt;path/to/local/files&gt;<span class="w"> </span>&lt;username&gt;@158.143.30.9:&lt;remote/path&gt;
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>&lt;path/to/local/files&gt;<span class="w"> </span>&lt;username&gt;@&lt;host-provided-by-admin&gt;:&lt;remote/path&gt;
 </code></pre></div>
 <p>Copy Winston → local (reverse direction):</p>
-<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>&lt;username&gt;@winston.ip.address:&lt;remote/path&gt;<span class="w"> </span>&lt;path/to/local/folder&gt;
+<div class="highlight"><pre><span></span><code>scp<span class="w"> </span>-r<span class="w"> </span>&lt;username&gt;@&lt;host-provided-by-admin&gt;:&lt;remote/path&gt;<span class="w"> </span>&lt;path/to/local/folder&gt;
 </code></pre></div>
 <p>Notes:
-    - <code>-r</code> recursively copies directories</p>
-<h2 id="command-line-rsync-recommended-for-lots-of-files">Command line: rsync (recommended for lots of files)<a class="headerlink" href="#command-line-rsync-recommended-for-lots-of-files" title="Permanent link">&para;</a></h2>
+- <code>-r</code> recursively copies directories.
+- Use absolute paths to avoid surprises (e.g. <code>/data/users/&lt;username&gt;/project</code>).</p>
+<h2 id="command-line-rsync-recommended-for-lots-of-files">Command line: <code>rsync</code> (recommended for lots of files)<a class="headerlink" href="#command-line-rsync-recommended-for-lots-of-files" title="Permanent link">&para;</a></h2>
 <p>rsync is faster for large transfers and incremental updates (only changed files are sent).</p>
-<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>&lt;path/to/local/files&gt;<span class="w"> </span>&lt;username&gt;@&lt;ip_address&gt;:&lt;remote/path&gt;
+<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>&lt;path/to/local/files&gt;<span class="w"> </span>&lt;username&gt;@&lt;host-provided-by-admin&gt;:&lt;remote/path&gt;
+</code></pre></div>
+<p>Reverse direction (Winston → local):</p>
+<div class="highlight"><pre><span></span><code>rsync<span class="w"> </span>-av<span class="w"> </span>&lt;username&gt;@&lt;host-provided-by-admin&gt;:&lt;remote/path&gt;<span class="w"> </span>&lt;path/to/local/folder&gt;
 </code></pre></div>
 <p>Common flags:
-    - <code>-a</code> preserve metadata (permissions, timestamps)
-    - <code>-v</code> verbose output
-    - add <code>-z</code> to compress during transfer (useful over slower links)</p>
+- <code>-a</code> preserve metadata (permissions, timestamps)
+- <code>-v</code> verbose output
+- add <code>-z</code> to compress during transfer (useful over slower links)
+- trailing slash matters: <code>data/</code> copies contents; <code>data</code> copies the folder</p>
 
 
 

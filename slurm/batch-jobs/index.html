@@ -14,7 +14,7 @@
         <link rel="prev" href="../overview/">
       
       
-        <link rel="next" href="../gpu-jobs/">
+        <link rel="next" href="../interactive-jobs/">
       
       
         
@@ -538,7 +538,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive-jobs.md" class="md-nav__link">
+      <a href="../interactive-jobs/" class="md-nav__link">
         
   
   
@@ -972,6 +972,7 @@
 <span class="c1">#SBATCH --time=01:00:00        # Max walltime (hh:mm:ss)</span>
 <span class="c1">#SBATCH --mem=10G              # Memory per job</span>
 <span class="c1">#SBATCH --cpus-per-task=4      # Number of CPU cores</span>
+<span class="c1">#SBATCH --partition=winston    # Default partition (optional)</span>
 
 python<span class="w"> </span>my_script.py
 </code></pre></div>
@@ -985,6 +986,10 @@ python<span class="w"> </span>my_script.py
 <p class="admonition-title">Walltime default</p>
 <p>If you do not set --time, the current default is 12 hours.
 Jobs that exceed their walltime will be terminated by the scheduler.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Memory requests</p>
+<p><code>--mem</code> is total memory for the job. If you prefer per-core memory, use <code>--mem-per-cpu</code>.</p>
 </div>
 
 

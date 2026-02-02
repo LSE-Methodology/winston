@@ -478,7 +478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../slurm/interactive-jobs.md" class="md-nav__link">
+      <a href="../../slurm/interactive-jobs/" class="md-nav__link">
         
   
   
@@ -964,12 +964,16 @@
 <h1 id="useful-commands">Useful commands<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h1>
 <h2 id="slurm-essentials">Slurm essentials<a class="headerlink" href="#slurm-essentials" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>squeue<span class="w"> </span><span class="c1"># see running/queued jobs</span>
+squeue<span class="w"> </span>-u<span class="w"> </span><span class="nv">$USER</span><span class="w"> </span><span class="c1"># see your jobs</span>
 sbatch<span class="w"> </span>script.sh<span class="w"> </span><span class="c1"># submit job</span>
 salloc<span class="w"> </span>--mem<span class="o">=</span>10G<span class="w"> </span>--cpus-per-task<span class="o">=</span><span class="m">4</span><span class="w"> </span>--time<span class="o">=</span><span class="m">01</span>:00:00<span class="w"> </span><span class="c1"># reserve interactive resources</span>
 scancel<span class="w"> </span>&lt;JOBID&gt;<span class="w"> </span><span class="c1"># cancel job</span>
+sinfo<span class="w"> </span><span class="c1"># view partitions / nodes</span>
+sacct<span class="w"> </span>-j<span class="w"> </span>&lt;JOBID&gt;<span class="w"> </span><span class="c1"># view job history</span>
 </code></pre></div>
 <p>Node details:</p>
 <div class="highlight"><pre><span></span><code>scontrol<span class="w"> </span>show<span class="w"> </span>node<span class="w"> </span>&lt;node&gt;<span class="w"> </span><span class="c1"># see node description</span>
+scontrol<span class="w"> </span>show<span class="w"> </span>job<span class="w"> </span>&lt;JOBID&gt;<span class="w"> </span><span class="c1"># see job details</span>
 </code></pre></div>
 <p>Spack essentials:</p>
 <div class="highlight"><pre><span></span><code>spack<span class="w"> </span>search<span class="w"> </span>&lt;name&gt;
