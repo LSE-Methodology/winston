@@ -1,0 +1,39 @@
+site_name: Winston HPC User Guide
+site_description: User documentation for the Winston small HPC cluster
+repo_name: winston-hpc-guide
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.details
+
+nav:
+  - Home: index.md
+  - Getting started:
+      - Accessing Winston: getting-started/access.md
+      - Transferring files: getting-started/file-transfer.md
+      - SSH tips: getting-started/ssh-tips.md
+  - Slurm jobs:
+      - Overview: slurm/overview.md
+      - Batch jobs: slurm/batch-jobs.md
+      - Interactive jobs: slurm/interactive-jobs.md
+      - GPU jobs: slurm/gpu-jobs.md
+  - Software:
+      - Overview: software/overview.md
+      - Spack: software/spack.md
+      - Miniconda: software/conda.md
+      - Using envs in Slurm: software/slurm-with-envs.md
+  - Reference:
+      - Cluster resources: reference/resources.md
+      - Useful commands: reference/commands.md
+  - Policies: policies.md
