@@ -8,6 +8,11 @@ Two supported approaches:
 - **Spack**: compiled system software (R, compilers, MPI, scientific libraries)
 - **Miniconda**: user-level environments (Python/R packages, data science stacks)
 
+Rule of thumb:
+- Use **Spack** for system-level or compiled dependencies.
+- Use **Conda** for Python/R packages and analysis workflows.
+- It’s fine to mix them (see **Using envs in Slurm**).
+
 ## System overview
 
 | Layer | Tool | Purpose |

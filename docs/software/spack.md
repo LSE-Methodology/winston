@@ -30,9 +30,9 @@ R --version
 ```
 
 Notes:
-    - Builds go under: /data/spack/users/$USER/opt/spack
-    - Remove availability in your shell with: `spack unload <pkg>`
-    - List installed packages: `spack find`
+- Builds go under: `/data/spack/users/$USER/opt/spack`
+- Remove availability in your shell with: `spack unload <pkg>`
+- List installed packages: `spack find`
 
 !!! note
     If a package already exists on the system, Spack may use a prebuilt binary automatically.

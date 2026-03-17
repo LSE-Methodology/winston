@@ -11,7 +11,7 @@ You can use Spack and Conda together in the same job.
 #SBATCH --job-name=test
 #SBATCH --time=00:05:00
 #SBATCH --ntasks=1
-#SBATCH --output=output_%j.log
+#SBATCH --output=/scratch/%u/%x_%j.out
 
 # Set up Spack + Conda
 source /opt/spack/share/spack/setup-env.sh
@@ -31,3 +31,4 @@ sbatch job.sbatch
 
 !!! tip
 Spack is great for optimized compiled libraries; Conda is great for high-level packages.
+If `conda activate` fails inside a job, make sure you sourced `conda.sh` as shown above.

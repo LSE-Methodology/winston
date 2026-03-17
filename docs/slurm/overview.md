@@ -14,7 +14,14 @@ You can use Winston in two main ways:
 ## Quick commands
 
 ```bash
-squeue           # view jobs
-scancel <JOBID>  # cancel a job
-winfo            # view allocated resources / cluster usage (local helper)
+squeue               # view all jobs
+squeue -u $USER      # view your jobs
+scancel <JOBID>      # cancel a job
+sinfo               # view partitions / nodes
+winfo               # view allocated resources / cluster usage (local helper)
 ```
+
+## Partitions and priority
+
+- Partitions: `winston` (CPU) and `winston-gpu` (GPU).
+- QoS priority order: faculty → postdocs → PhD students.

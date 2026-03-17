@@ -5,11 +5,12 @@ Winston is accessible via SSH from within the LSE network.
 ## SSH from within the LSE network
 
 ```bash
-ssh user@ip.address
+ssh <username>@<host-provided-by-admin>
 ```
 
 !!! note
-    Replace `user` and `ip.address` with your Winston username and the IP address provided when your account was created.
+    Replace `<username>` and `<host-provided-by-admin>` with the details provided when your account was created.
+    If you were given an SSH key, add `-i /path/to/key` to the command.
 
 ## Access from outside LSE (VPN)
 

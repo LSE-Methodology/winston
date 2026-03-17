@@ -41,6 +41,27 @@ Deactivate:
 
 ```bash
 conda deactivate
-Reproducibility
+```
+
+## Storage tips
+
+!!! tip "Conda environments can grow large"
+    Environments at `~/miniconda3/` can reach tens of GB. To keep your home directory lean:
+
+    - **Clean unused packages:** `conda clean --all`
+    - **Export env specs** so you can recreate them: `conda env export > environment.yml`
+    - **Remove old environments:** `conda env remove -n <name>`
+
+## Reproducibility
+
+Export a full environment:
+
+```bash
 conda env export > env.yml
+```
+
+Export only packages you explicitly installed:
+
+```bash
+conda env export --from-history > env.yml
 ```

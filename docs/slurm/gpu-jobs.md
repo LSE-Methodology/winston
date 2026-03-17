@@ -23,7 +23,8 @@ Create a batch script `my_gpu_job.sh`:
 #SBATCH --time=02:00:00
 #SBATCH --mem=20G
 #SBATCH --cpus-per-task=4
-#SBATCH --output=output_%j.log
+#SBATCH --output=/scratch/%u/%x_%j.out
+#SBATCH --error=/scratch/%u/%x_%j.err
 
 python train.py
 ```
@@ -33,3 +34,6 @@ Submit with:
 ```bash
 sbatch my_gpu_job.sh
 ```
+
+!!! tip
+    Once running, use `scontrol show job <JOBID>` or `nvidia-smi` (on the node) to confirm GPU allocation.

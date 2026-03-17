@@ -12,8 +12,11 @@ Then add:
 
 ```bash
 Host winston
-    HostName <ip_address>
+    HostName <host-provided-by-admin>
     User <username>
+    IdentityFile ~/.ssh/id_ed25519
+    ServerAliveInterval 60
+    ServerAliveCountMax 2
 ```
 
 Then connect with:
@@ -21,3 +24,6 @@ Then connect with:
 ```bash
 ssh winston
 ```
+
+!!! note
+    Remove `IdentityFile` if you are using password-based login.

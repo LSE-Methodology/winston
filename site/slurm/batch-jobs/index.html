@@ -14,7 +14,7 @@
         <link rel="prev" href="../overview/">
       
       
-        <link rel="next" href="../gpu-jobs/">
+        <link rel="next" href="../interactive-jobs/">
       
       
         
@@ -47,6 +47,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -538,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactive-jobs.md" class="md-nav__link">
+      <a href="../interactive-jobs/" class="md-nav__link">
         
   
   
@@ -972,6 +974,7 @@
 <span class="c1">#SBATCH --time=01:00:00        # Max walltime (hh:mm:ss)</span>
 <span class="c1">#SBATCH --mem=10G              # Memory per job</span>
 <span class="c1">#SBATCH --cpus-per-task=4      # Number of CPU cores</span>
+<span class="c1">#SBATCH --partition=winston    # Default partition (optional)</span>
 
 python<span class="w"> </span>my_script.py
 </code></pre></div>
@@ -985,6 +988,10 @@ python<span class="w"> </span>my_script.py
 <p class="admonition-title">Walltime default</p>
 <p>If you do not set --time, the current default is 12 hours.
 Jobs that exceed their walltime will be terminated by the scheduler.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Memory requests</p>
+<p><code>--mem</code> is total memory for the job. If you prefer per-core memory, use <code>--mem-per-cpu</code>.</p>
 </div>
 
 
